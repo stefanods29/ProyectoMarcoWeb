@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#C4903E">
+  <title>Chuponcito — La Mejor Pizza Recién Hecha</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="promo-bar text-center py-1 small">
+    ¡Delivery gratis en pedidos mayores a S/50 • Código: GRATIS50
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="imagenes/logo_chuponcito.png" alt="Logo Chuponcito">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <form class="d-flex ms-auto me-3" role="search" onsubmit="return false;">
+          <input class="form-control form-control-sm" type="search" placeholder="Buscar pizza, ingrediente..." aria-label="Buscar">
+        </form>
+        <ul class="navbar-nav align-items-lg-center gap-2">
+          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
+          <li class="nav-item"><a class="nav-link" href="#promos">Promociones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item ms-lg-3">
+            <button class="btn btn-cta btn-sm px-3" data-bs-toggle="modal" data-bs-target="#orderModal">ORDENA AQUÍ</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-md-6 text-center text-md-start order-2 order-md-1">
+          <div class="mb-3">
+            <span class="badge hot-badge">PROMO</span>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <div>
+              <div class="price">S/29.90</div>
+              <h2 class="fw-bold">Hot-N-Ready — Pizza Clásica</h2>
+              <p class="lead">La pizza recién salida del horno, lista cuando tú llegas. Masa crujiente, salsa casera y queso fundente.</p>
+              <div class="mt-3">
+                <a class="btn btn-cta btn-lg me-2" href="#orden">ORDENA AHORA</a>
+                <a class="btn btn-outline-light btn-lg" href="#menu"><i class="bi bi-card-list me-1"></i> Ver Menú</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 text-center order-1 order-md-2">
+          <img loading="lazy" src="imagenes/pizzaPromo2.png" alt="Pizza promocional" class="hero-img">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="features" class="py-5">
+      <div class="container">
+        <div class="row gy-4 text-center">
+          <div class="col-md-4">
+            <div class="feature-card p-4 h-100">
+              <div class="feature-icon mb-3">
+                <img src="imagenes/pizza.png" width="72" alt="Queso">
+              </div>
+              <h5 class="mb-2">Queso Premium</h5>
+              <p class="mb-0">Mezcla especial que se funde perfecto en cada porción.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card p-4 h-100">
+              <div class="feature-icon mb-3">
+                <img src="imagenes/dough.png" width="72" alt="Masa">
+              </div>
+              <h5 class="mb-2">Masa Artesanal</h5>
+              <p class="mb-0">Amasada diariamente para lograr ese borde crujiente.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card p-4 h-100">
+              <div class="feature-icon mb-3">
+                <img src="imagenes/sauce.png" width="72" alt="Salsa">
+              </div>
+              <h5 class="mb-2">Salsa Casera</h5>
+              <p class="mb-0">Tomates maduros y hierbas frescas, sin conservantes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="py-5 bg-transparent">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h3 class="fw-bold mb-0">Menú Destacado</h3>
+          <a href="#menuCompleto" class="btn btn-outline-light">Ver todo</a>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 menu-grid">
+          <div class="col">
+            <div class="card h-100">
+              <img src="imagenes/pizza1.jpg" class="card-img-top" alt="Pizza pepperoni">
+              <div class="card-body text-white">
+                <h5 class="card-title">Pepperoni Clásica</h5>
+                <p class="card-text">Pepperoni en su punto, queso fundido y borde crujiente.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <strong>S/29.90</strong>
+                  <a href="#orden" class="btn btn-sm btn-cta">Ordenar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100">
+              <img src="imagenes/pizza2.jpg" class="card-img-top" alt="Pizza hawaiana">
+              <div class="card-body text-white">
+                <h5 class="card-title">Hawaiana</h5>
+                <p class="card-text">Jamón, piña y nuestro toque secreto.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <strong>S/35.00</strong>
+                  <a href="#orden" class="btn btn-sm btn-cta">Ordenar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100">
+              <img src="imagenes/pizza3.jpg" class="card-img-top" alt="Pizza vegetariana">
+              <div class="card-body text-white">
+                <h5 class="card-title">Vegetariana</h5>
+                <p class="card-text">Ingredientes frescos de la huerta.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <strong>S/32.50</strong>
+                  <a href="#orden" class="btn btn-sm btn-cta">Ordenar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="py-5">
+      <div class="container">
+        <h3 class="fw-bold text-center mb-4">Qué dicen nuestros clientes</h3>
+        <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner text-center">
+            <div class="carousel-item active">
+              <blockquote class="blockquote mx-auto" style="max-width:720px;">
+                <p class="mb-2">"La mejor pizza de Lima. Siempre caliente y deliciosa. ¡Recomendado!"</p>
+                <footer class="blockquote-footer text-white small">María P.</footer>
+              </blockquote>
+            </div>
+            <div class="carousel-item" style=" height:100px ;">
+              <blockquote class="blockquote mx-auto" style="max-width:720px;   ">
+                <p class="mb-2">"Pedí para la familia y todos encantados. El delivery fue rápido."</p>
+                <footer class="blockquote-footer text-white small">Carlos R.</footer>
+              </blockquote>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="py-5 bg-transparent">
+      <div class="container">
+        <h3 class="fw-bold text-center mb-4">Preguntas frecuentes</h3>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faqOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">¿Hacen delivery?</button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Sí, delivery a toda Lima Metropolitana. Gratis en pedidos mayores a S/50.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faqTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">¿Puedo personalizar mi pizza?</button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Claro, ofrecemos opciones de ingredientes y tamaños.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="py-5">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <h3 class="fw-bold">Contáctanos</h3>
+            <form id="contactForm" novalidate>
+              <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" required>
+                <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input type="email" class="form-control" required>
+                <div class="invalid-feedback">Por favor ingresa un correo válido.</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Mensaje</label>
+                <textarea class="form-control" rows="4" required></textarea>
+                <div class="invalid-feedback">Escribe tu mensaje.</div>
+              </div>
+              <button class="btn btn-cta">Enviar</button>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="fw-bold">Nuestra Ubicación</h3>
+            <div class="map-placeholder rounded" aria-hidden="true">Mapa (iframe aquí)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-transparent">
+      <div class="container text-center">
+        <h4 class="fw-bold mb-3">Suscríbete y recibe promociones</h4>
+        <form class="row justify-content-center g-2" onsubmit="return false;">
+          <div class="col-auto">
+            <input class="form-control form-control-lg" placeholder="Tu correo" aria-label="Correo">
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-cta btn-lg">Suscribirme</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-3 mb-md-0 text-center text-md-start">
+        <strong>&copy; 2025 Chuponcito</strong>
+        <div class="small">Sucursal principal: Av. Ejemplo 123, Lima • Tel: (01) 123-4567</div>
+      </div>
+
+      <div class="text-center">
+        <a class="me-3" href="#"><i class="bi bi-facebook" aria-hidden="true"></i><span class="visually-hidden">Facebook</span></a>
+        <a class="me-3" href="#"><i class="bi bi-instagram" aria-hidden="true"></i><span class="visually-hidden">Instagram</span></a>
+        <a href="#"><i class="bi bi-twitter" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">Orden rápida</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <form id="quickOrderForm">
+            <div class="mb-3">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Teléfono</label>
+              <input type="tel" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Pizza</label>
+              <select class="form-select" required>
+                <option value="">Selecciona...</option>
+                <option>Pepperoni</option>
+                <option>Hawaiana</option>
+                <option>Vegetariana</option>
+              </select>
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-cta">Enviar Orden</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Simple form validation
+    (function(){
+      'use strict'
+      const forms = document.querySelectorAll('#contactForm, #quickOrderForm')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', function(event){
+          if(!form.checkValidity()){
+            event.preventDefault(); event.stopPropagation();
+            form.classList.add('was-validated')
+          } else {
+            // Aquí podrías enviar por fetch / API
+            event.preventDefault();
+            const btn = form.querySelector('button[type=submit], button.btn-cta')
+            if(btn) btn.disabled = true;
+            alert('Gracias — tu formulario ha sido enviado (demo).')
+            form.reset(); form.classList.remove('was-validated')
+            if(btn) btn.disabled = false;
+            const modal = bootstrap.Modal.getInstance(document.getElementById('orderModal'))
+            if(modal) modal.hide()
+          }
+        })
+      })
+    })()
+  </script>
+</body>
+</html>

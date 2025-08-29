@@ -17,8 +17,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Promo bar */
-.promo-bar {
+/* Barra promocional */
+.barra-promo {
   background: var(--brand);
   color: var(--bg-dark);
   font-weight: 600;
@@ -42,45 +42,59 @@ body {
 
 .form-control,
 .form-select {
-  background: transparent;
+  background: var(--card);
   color: var(--muted);
   border-color: rgba(255, 255, 255, 0.06);
 }
+
+.form-control:focus,
+.form-select:focus {
+  background: var(--card);
+  color: var(--muted);
+  border-color: var(--brand) !important;
+  box-shadow: 0 4px 12px rgba(226, 179, 86, 0.35) !important;
+}
+
 .form-control::placeholder {
   color: rgba(251, 231, 205, 0.5);
 }
 
-.btn-cta {
+/* Botón principal / CTA */
+.btn-accion {
   background: var(--accent);
   border: none;
   color: var(--bg-dark);
   font-weight: 700;
 }
-.btn-cta:hover {
+.btn-accion:hover {
   filter: brightness(0.95);
 }
 
-.feature-icon {
-  width: 110px;          
-  height: 110px;          
-  border-radius: 50%;     
+
+
+/* Icono característica */
+.icono-caracteristica {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
   border: 3px solid var(--brand);
-  background: var(--brand); 
-  display: flex;        
-  align-items: center;   
+  background: var(--brand);
+  display: flex;
+  align-items: center;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  transition: transform 0.22s ease; 
+  transition: transform 0.22s ease;
 }
 
-.feature-card:hover .feature-icon{
+/* Movimiento del icono al hover de la tarjeta */
+.tarjeta-caracteristica:hover .icono-caracteristica {
   transform: translateY(-6px);
-  box-shadow: 2.5px 5px 15px var(--accent)
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 /* HERO */
-.hero {
+.heroe {
   padding: 4.5rem 0;
   background: linear-gradient(
     135deg,
@@ -88,22 +102,22 @@ body {
     rgba(196, 144, 62, 0.06)
   );
 }
-.hero .price {
+.heroe .precio {
   font-family: "Merriweather", serif;
   font-size: 3.5rem;
   letter-spacing: 0.02em;
   color: var(--brand);
 }
-.hero h2 {
+.heroe h2 {
   font-size: 2.25rem;
   margin-top: 0.25rem;
   color: #fff;
 }
-.hero .lead {
+.heroe .lead {
   color: var(--muted);
 }
 
-.hero-img {
+.imagen-heroe {
   border-radius: 1rem;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
   width: 100%;
@@ -111,37 +125,39 @@ body {
   display: block;
 }
 
-.feature-card {
+/* Tarjeta característica */
+.tarjeta-caracteristica {
   background: var(--card);
   border-radius: var(--radius);
   padding: 1.2rem;
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
-.feature-card:hover {
+.tarjeta-caracteristica:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-.menu-grid .card {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.01)
-  );
-  border: none;
+/* Rejilla de menú */
+.rejilla-menu .card {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: var(--radius);
 }
-.menu-grid .card img {
+.rejilla-menu .card img {
   height: 160px;
   object-fit: cover;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
 
+/* Sección 'hot' (opcional) */
 .hot-section {
   padding: 3.5rem 0;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.02));
 }
-.hot-badge {
+
+/* Insignia */
+.insignia-caliente {
   display: inline-block;
   background: var(--brand);
   color: var(--bg-dark);
@@ -150,7 +166,8 @@ body {
   border-radius: 999px;
 }
 
-.map-placeholder {
+/* Placeholder del mapa */
+.mapa-placeholder {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.25));
   min-height: 220px;
   display: flex;
@@ -170,24 +187,195 @@ footer a {
   color: var(--muted);
 }
 
-/* Carousel quotes */
-.carousel .blockquote {
+/*Acordion de imagenes*/
+
+/* Estilos acordeón con variables */
+.accordion-button {
+  background-color: var(--brand);
   color: var(--muted);
-  font-size: 1.05rem;
+  font-weight: bold;
+  border-radius: var(--radius);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Header cuando está abierto */
+.accordion-button:not(.collapsed) {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+  box-shadow: none;
+}
+
+/* Quitar bordes default de Bootstrap */
+.accordion-item {
+  border: none;
+  background-color: transparent;
+}
+
+/* Flecha (ícono del accordion) */
+.accordion-button::after {
+  filter: brightness(0) invert(1); /* blanco cuando está cerrado */
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0); /* oscuro cuando está abierto */
+}
+
+/* Contenido interno */
+.accordion-body {
+  background-color: var(--card);
+  color: var(--muted);
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 1rem 1.25rem;
+}
+
+
+
+
+/* Testimonios */
+#testimonials {
+  background: var(--bg-dark);
+  color: var(--muted);
+  position: relative;
+  overflow: hidden;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+/* Espacio entre slides */
+#testimonials .carousel-inner {
+  padding: 2rem 0;
+}
+
+/* Tarjeta testimonial (convertimos el blockquote en card) */
+#testimonials .blockquote {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(180deg, rgba(251,231,205,0.04), var(--card));
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  border: 1px solid rgba(196,144,62,0.08);
+  backdrop-filter: blur(6px);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+/* Elevación ligera cuando la tarjeta está activa o al hover */
+#testimonials .carousel-item.active .blockquote,
+#testimonials .blockquote:hover {
+  transform: translateY(-8px) scale(1.01);
+}
+
+/* Gran marca de comillas decorativa */
+#testimonials .blockquote::before {
+  content: "“";
+  position: absolute;
+  top: 0px;
+  left: 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 5.25rem;
+  line-height: 1;
+  color: rgba(226,179,86,0.12);
+  pointer-events: none;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+}
+
+/* Texto del testimonio */
+#testimonials .blockquote p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-style: normal;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.1px;
+}
+
+/* Autor */
+#testimonials .blockquote .small,
+#testimonials .blockquote footer {
+  color: var(--muted);
+  opacity: 0.95;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-transform: none;
+}
+
+/* Controles (prev/next) — fondo dorado y círculo */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  /* conservamos el icono por defecto y añadimos un fondo circular */
+  background-color: var(--brand);
+  border-radius: 999px;
+  box-shadow: 0 8px 26px rgba(196,144,62,0.18);
+  width: 46px;
+  height: 46px;
+  background-size: 18px 18px; /* ajusta tamaño del icono interno */
+}
+
+/* Ajuste de botón contenedor para centrar verticalmente y dejar espacio */
+.carousel-control-prev,
+.carousel-control-next {
+  width: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Indicadores (si decides agregarlos) */
+.carousel-indicators {
+  bottom: -14px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.18);
+  border: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.carousel-indicators .active {
+  background-color: var(--accent);
+  transform: scale(1.15);
+  box-shadow: 0 6px 18px rgba(226,179,86,0.20);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 576px) {
+  #testimonials .blockquote {
+    padding: 1.25rem 1rem;
+    border-radius: calc(var(--radius) * 0.7);
+  }
+  #testimonials .blockquote::before {
+    font-size: 3.2rem;
+    left: 12px;
+    top: -6px;
+  }
+  #testimonials .blockquote p { font-size: .98rem; }
+}
+
+/* Pequeño estilo para el título */
+#testimonials h3 {
+  color: var(--muted);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.2px;
+}
+
+
 @media (max-width: 767px) {
-  .hero {
+  .heroe {
     padding: 2.5rem 0;
   }
-  .hero .price {
+  .heroe .precio {
     font-size: 2.25rem;
   }
-  .hero h2 {
+  .heroe h2 {
     font-size: 1.5rem;
   }
-  .hero-img {
+  .imagen-heroe {
     max-width: 100%;
   }
 }
-

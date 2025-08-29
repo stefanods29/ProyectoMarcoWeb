@@ -436,7 +436,11 @@ footer a {
   font-weight: 600;
 }
 
-
+.modal-body .form-select:hover {
+  background: rgba(226, 179, 86, 0.12) !important;
+  color: #fff !important;
+  border-color: var(--brand) !important;
+}
 
 
 

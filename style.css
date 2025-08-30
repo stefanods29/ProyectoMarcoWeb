@@ -30,7 +30,7 @@ body {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.6), rgba(30, 30, 30, 0.4));
 }
 .navbar-brand img {
-  max-height: 56px;
+  max-height: 80px;
 }
 .nav-link {
   color: var(--muted) !important;
@@ -100,7 +100,7 @@ body {
 }
 
 /* Hero */
-.heroe {
+.hero {
   padding: 4.5rem 0;
   background: linear-gradient(
     135deg,
@@ -108,21 +108,21 @@ body {
     rgba(196, 144, 62, 0.06)
   );
 }
-.heroe .precio {
+.hero .precio {
   font-family: "Merriweather", serif;
   font-size: 3.5rem;
   letter-spacing: 0.02em;
   color: var(--brand);
 }
-.heroe h2 {
+.hero h2 {
   font-size: 2.25rem;
   margin-top: 0.25rem;
   color: #fff;
 }
-.heroe .lead {
+.hero .lead {
   color: var(--muted);
 }
-.imagen-heroe {
+.imagen-hero {
   border-radius: var(--radius);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
   width: 100%;
@@ -362,16 +362,16 @@ footer a {
   margin-bottom: 1.25rem;
 }
 @media (max-width: 767px) {
-  .heroe {
+  .hero {
     padding: 2.5rem 0;
   }
-  .heroe .precio {
+  .hero .precio {
     font-size: 2.25rem;
   }
-  .heroe h2 {
+  .hero h2 {
     font-size: 1.5rem;
   }
-  .imagen-heroe {
+  .imagen-hero {
     max-width: 100%;
   }
 }

@@ -10,6 +10,7 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: "Poppins", Arial, sans-serif;
   background: var(--bg-dark);
@@ -81,20 +82,14 @@ body {
   filter: brightness(0.95);
 }
 
-/* Icono característica */
-.icono-caracteristica {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: 3px solid var(--brand);
-  background: var(--brand);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  transition: transform 0.22s ease;
+/* Tarjeta */
+.tarjeta-caracteristica {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
-.tarjeta-caracteristica:hover .icono-caracteristica {
+.tarjeta-caracteristica:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
@@ -130,18 +125,6 @@ body {
   display: block;
 }
 
-/* Tarjeta */
-.tarjeta-caracteristica {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 1.2rem;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-.tarjeta-caracteristica:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-}
-
 /* Menú */
 .rejilla-menu .card {
   background: var(--card);
@@ -154,11 +137,7 @@ body {
   border-top-right-radius: 0.5rem;
 }
 
-/* Hot */
-.hot-section {
-  padding: 3.5rem 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.02));
-}
+/* Insignia */
 .insignia-caliente {
   display: inline-block;
   background: var(--brand);
@@ -271,25 +250,6 @@ footer a {
   transform: translateY(-50%);
   width: auto;
 }
-.carousel-indicators {
-  bottom: -14px;
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  padding-top: 1rem;
-}
-.carousel-indicators button {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
-  border: none;
-  transition: all 0.18s ease;
-}
-.carousel-indicators .active {
-  background: var(--accent);
-  transform: scale(1.15);
-}
 
 /* Modal */
 .modal-content {
@@ -356,11 +316,13 @@ footer a {
     font-size: 0.98rem;
   }
 }
+
 #testimonials h3 {
   color: var(--muted);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   margin-bottom: 1.25rem;
 }
+
 @media (max-width: 767px) {
   .hero {
     padding: 2.5rem 0;
